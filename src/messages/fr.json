@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "buy": "Acheter",
+    "rent": "Louer",
+    "invest": "Investir",
+    "services": "Nos Services",
+    "contact": "Contact",
+    "catalogue": "Catalogue",
+    "abroadGuide": "Acheter depuis l'étranger",
+    "withRep": "Vous avez un représentant",
+    "rentalMgmt": "Confier en gestion",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
+  },
+  "currency": {
+    "label": "Changer la devise d'affichage",
+    "FCFA": "FCFA",
+    "EUR": "EUR",
+    "USD": "USD"
+  },
+  "lang": {
+    "fr": "Français",
+    "en": "English",
+    "switch": "Changer de langue"
+  },
+  "hero": {
+    "eyebrow": "Agence immobilière agréée — Burkina Faso",
+    "tagline": "L'immobilier de confiance au Burkina Faso",
+    "tagline1": "Votre patrimoine au",
+    "taglineEm": "Burkina Faso,",
+    "tagline2": "en toute confiance.",
+    "subtitle": "Catalogue synchronisé en temps réel · Conseil IA personnalisé · Accompagnement diaspora",
+    "trust1": "IFU · RCCM · Agrément MHUE",
+    "trust2": "Agrément Ministère de l'Habitat",
+    "trust3": "Réponse WhatsApp < 5 min",
+    "g3Placeholder": "Décrivez votre projet immobilier…",
+    "g3PlaceholderAlt": "Ex : Je cherche une parcelle à Ouaga 2000, budget 18M FCFA",
+    "g3Label": "Configurateur Patrimonial G3 · ",
+    "g3LabelHighlight": "Alimenté par IA · Grille marché en temps réel",
+    "g3Submit": "Analyser →",
+    "g3Analyzing": "Analyse en cours…",
+    "g3Unavailable": "Conseiller IA temporairement indisponible",
+    "g3FallbackMsg": "Notre assistant est temporairement indisponible — envoyez-nous votre projet et nous vous répondons sous 24h"
+  },
+  "property": {
+    "available": "Disponible",
+    "pending": "Sous compromis",
+    "sold": "Vendu",
+    "surface": "Surface",
+    "price": "Prix",
+    "location": "Localisation",
+    "viewDetails": "Voir la fiche",
+    "contactWhatsApp": "WhatsApp",
+    "featuredProperties": "Biens en vedette",
+    "allProperties": "Tout le catalogue",
+    "availableTitle": "Biens disponibles",
+    "filterAll": "Tous",
+    "noResults": "Aucun bien disponible pour ces critères",
+    "noResultsAction": "Modifier les filtres",
+    "dataFreshness": "Données mises à jour le",
+    "statusLabel": "Statut :",
+    "parcelle": "Parcelle",
+    "villa": "Villa",
+    "terrain": "Terrain",
+    "appartement": "Appartement",
+    "immeuble": "Immeuble",
+    "location_type": "Location",
+    "standardPlot": "environ {count} parcelle standard Ouaga",
+    "standardPlots": "environ {count} parcelles standard Ouaga"
+  },
+  "filter": {
+    "type": "Type de bien",
+    "city": "Ville",
+    "all": "Tous",
+    "allTypes": "Tous les types",
+    "allCities": "Toutes les villes"
+  },
+  "contact": {
+    "name": "Votre nom",
+    "phone": "Téléphone",
+    "email": "Email",
+    "message": "Votre message",
+    "messagePlaceholder": "Décrivez votre projet ou posez votre question…",
+    "submit": "Envoyer",
+    "submitting": "Envoi en cours…",
+    "success": "Votre message a bien été envoyé. Réponse en moins de 24h.",
+    "error": "Service temporairement indisponible. Contactez-nous par WhatsApp.",
+    "propertySuccess": "Votre demande pour le bien {ref} a bien été envoyée.",
+    "whatsappGeneric": "Bonjour Menadel Residence, je souhaite obtenir des informations.",
+    "whatsappProperty": "Bonjour, je suis intéressé(e) par le bien réf. {ref}.",
+    "whatsappOffHours": "Répond à l'ouverture",
+    "whatsappLabel": "Contacter via WhatsApp"
+  },
+  "footer": {
+    "legalTitle": "Informations légales",
+    "tagline": "Agence immobilière agréée au Burkina Faso — acheteurs locaux et diaspora.",
+    "address": "Adresse",
+    "addressValue": "Ouagadougou, Burkina Faso",
+    "rights": "© {year} Menadel Residence. Tous droits réservés.",
+    "privacy": "Politique de confidentialité",
+    "services": "Nos services",
+    "expertise": "Expertise immobilière",
+    "adminProcess": "Démarches administratives",
+    "rentalMgmt": "Gestion locative"
+  },
+  "gdpr": {
+    "message": "Nous utilisons des cookies analytiques pour améliorer votre expérience.",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "learnMore": "En savoir plus"
+  },
+  "trust": {
+    "propertiesAvailable": "biens disponibles",
+    "dealsDone": "transactions réalisées",
+    "yearsExperience": "ans d'expérience",
+    "formalAgency": "Agence formelle agréée"
+  },
+  "pages": {
+    "home": "Accueil",
+    "catalogue": "Catalogue",
+    "abroad": "Acheter depuis l'étranger",
+    "representative": "Avec un représentant",
+    "rental": "Gestion locative",
+    "whyMinadel": "Pourquoi Menadel",
+    "expertise": "Expertise immobilière",
+    "admin": "Démarches administratives",
+    "privacy": "Politique de confidentialité",
+    "contact": "Contact"
+  },
+  "catalogue": {
+    "resultCount": "{count} bien{count, plural, one {} other {s}} disponible{count, plural, one {} other {s}}",
+    "resultCountFiltered": "{count} bien{count, plural, one {} other {s}} correspond{count, plural, one {} other {ent}} à vos critères"
+  }
+}

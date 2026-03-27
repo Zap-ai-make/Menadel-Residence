@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "buy": "Buy",
+    "rent": "Rent",
+    "invest": "Invest",
+    "services": "Our Services",
+    "contact": "Contact",
+    "catalogue": "Catalogue",
+    "abroadGuide": "Buying from abroad",
+    "withRep": "You have a local representative",
+    "rentalMgmt": "Property management",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "currency": {
+    "label": "Change display currency",
+    "FCFA": "FCFA",
+    "EUR": "EUR",
+    "USD": "USD"
+  },
+  "lang": {
+    "fr": "Français",
+    "en": "English",
+    "switch": "Change language"
+  },
+  "hero": {
+    "eyebrow": "Licensed Real Estate Agency — Burkina Faso",
+    "tagline": "Trusted real estate in Burkina Faso",
+    "tagline1": "Your real estate in",
+    "taglineEm": "Burkina Faso,",
+    "tagline2": "with full confidence.",
+    "subtitle": "Real-time catalogue · AI-powered advice · Diaspora support",
+    "trust1": "IFU · RCCM · MHUE Licence",
+    "trust2": "Ministry of Housing Approval",
+    "trust3": "WhatsApp reply < 5 min",
+    "g3Placeholder": "Describe your real estate project…",
+    "g3PlaceholderAlt": "E.g. I'm looking for a plot in Ouaga 2000, budget 18M FCFA",
+    "g3Label": "G3 Patrimoine Configurator · ",
+    "g3LabelHighlight": "Powered by AI · Live market data",
+    "g3Submit": "Analyse →",
+    "g3Analyzing": "Analysing…",
+    "g3Unavailable": "AI advisor temporarily unavailable",
+    "g3FallbackMsg": "Our assistant is temporarily unavailable — send us your project and we'll reply within 24h"
+  },
+  "property": {
+    "available": "Available",
+    "pending": "Under offer",
+    "sold": "Sold",
+    "surface": "Area",
+    "price": "Price",
+    "location": "Location",
+    "viewDetails": "View listing",
+    "contactWhatsApp": "WhatsApp",
+    "featuredProperties": "Featured properties",
+    "allProperties": "Full catalogue",
+    "availableTitle": "Properties available",
+    "filterAll": "All",
+    "noResults": "No properties match your criteria",
+    "noResultsAction": "Change filters",
+    "dataFreshness": "Data updated on",
+    "statusLabel": "Status:",
+    "parcelle": "Plot",
+    "villa": "Villa",
+    "terrain": "Land",
+    "appartement": "Apartment",
+    "immeuble": "Building",
+    "location_type": "Rental",
+    "standardPlot": "approx. {count} standard Ouaga plot",
+    "standardPlots": "approx. {count} standard Ouaga plots"
+  },
+  "filter": {
+    "type": "Property type",
+    "city": "City",
+    "all": "All",
+    "allTypes": "All types",
+    "allCities": "All cities"
+  },
+  "contact": {
+    "name": "Your name",
+    "phone": "Phone",
+    "email": "Email",
+    "message": "Your message",
+    "messagePlaceholder": "Describe your project or ask a question…",
+    "submit": "Send",
+    "submitting": "Sending…",
+    "success": "Your message was sent. We'll reply within 24h.",
+    "error": "Service temporarily unavailable. Contact us via WhatsApp.",
+    "propertySuccess": "Your enquiry for property {ref} was sent.",
+    "whatsappGeneric": "Hello Menadel Residence, I would like some information.",
+    "whatsappProperty": "Hello, I am interested in property ref. {ref}.",
+    "whatsappOffHours": "Replies at opening time",
+    "whatsappLabel": "Contact via WhatsApp"
+  },
+  "footer": {
+    "legalTitle": "Legal information",
+    "tagline": "Licensed real estate agency in Burkina Faso — local buyers & diaspora.",
+    "address": "Address",
+    "addressValue": "Ouagadougou, Burkina Faso",
+    "rights": "© {year} Menadel Residence. All rights reserved.",
+    "privacy": "Privacy policy",
+    "services": "Our services",
+    "expertise": "Property expertise",
+    "adminProcess": "Administrative assistance",
+    "rentalMgmt": "Rental management"
+  },
+  "gdpr": {
+    "message": "We use analytics cookies to improve your experience.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "learnMore": "Learn more"
+  },
+  "trust": {
+    "propertiesAvailable": "properties available",
+    "dealsDone": "completed transactions",
+    "yearsExperience": "years of experience",
+    "formalAgency": "Licensed formal agency"
+  },
+  "pages": {
+    "home": "Home",
+    "catalogue": "Catalogue",
+    "abroad": "Buying from abroad",
+    "representative": "With a representative",
+    "rental": "Rental management",
+    "whyMinadel": "Why Menadel",
+    "expertise": "Property expertise",
+    "admin": "Administrative assistance",
+    "privacy": "Privacy policy",
+    "contact": "Contact"
+  },
+  "catalogue": {
+    "resultCount": "{count} {count, plural, one {property} other {properties}} available",
+    "resultCountFiltered": "{count} {count, plural, one {property matches} other {properties match}} your criteria"
+  }
+}

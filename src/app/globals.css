@@ -4,127 +4,199 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ============================================================
+   MINADEL RESIDENCE — DESIGN TOKENS
+   Palette : anthracite / or / blanc
+   Typographie : Cormorant Garamond (serif) + Inter (sans)
+   ============================================================ */
+
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
+  --font-mono: ui-monospace, monospace;
+
+  /* Brand Colors */
+  --color-anthracite:        #1C1C1E;
+  --color-anthracite-soft:   #2C2C2E;
+  --color-anthracite-muted:  #3A3A3C;
+  --color-gold:              #C9A84C;
+  --color-gold-light:        #E8C97A;
+  --color-gold-pale:         #F5E6B8;
+  --color-white:             #FAFAFA;
+  --color-white-soft:        #F0F0F0;
+  --color-white-muted:       #E5E5E5;
+
+  /* Status Colors */
+  --color-status-available:  #22C55E;
+  --color-status-pending:    #F59E0B;
+  --color-status-sold:       #EF4444;
+
+  /* Shadcn/ui mapping — dark theme (anthracite base) */
+  --color-background:        var(--color-anthracite);
+  --color-foreground:        var(--color-white);
+  --color-card:              var(--color-anthracite-soft);
+  --color-card-foreground:   var(--color-white);
+  --color-popover:           var(--color-anthracite-soft);
+  --color-popover-foreground: var(--color-white);
+  --color-primary:           var(--color-gold);
+  --color-primary-foreground: var(--color-anthracite);
+  --color-secondary:         var(--color-anthracite-muted);
+  --color-secondary-foreground: var(--color-white);
+  --color-muted:             var(--color-anthracite-muted);
+  --color-muted-foreground:  oklch(0.65 0 0);
+  --color-accent:            var(--color-gold);
+  --color-accent-foreground: var(--color-anthracite);
+  --color-destructive:       var(--color-status-sold);
+  --color-border:            oklch(1 0 0 / 12%);
+  --color-input:             oklch(1 0 0 / 10%);
+  --color-ring:              var(--color-gold);
+
+  /* Radius */
+  --radius-sm:  0.25rem;
+  --radius-md:  0.375rem;
+  --radius-lg:  0.5rem;
+  --radius-xl:  0.75rem;
+  --radius-2xl: 1rem;
 }
 
-:root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-}
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
+
   html {
+    @apply h-full;
+    font-size: 16px;
+  }
+
+  body {
+    background-color: var(--color-anthracite);
+    color: var(--color-white);
+    @apply font-sans min-h-full flex flex-col antialiased;
+  }
+
+  /* Focus visible — gold outline WCAG AA */
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+
+  /* Headings — Cormorant Garamond */
+  h1, h2 {
+    @apply font-serif;
+  }
+
+  h3, h4, h5, h6 {
     @apply font-sans;
   }
+
+  /* Minimum font size 16px mobile — exclure les spans qui héritent d'un parent
+     (h1, h2, etc.) pour ne pas écraser la taille du titre */
+  p, li, label, input, textarea, select {
+    @apply text-base;
+  }
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+@keyframes gold-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(from var(--color-gold) l c h / 0.4); }
+  50%       { box-shadow: 0 0 0 8px oklch(from var(--color-gold) l c h / 0); }
+}
+
+@keyframes gold-border-glow {
+  0%, 100% { box-shadow: 0 0 12px 2px oklch(from var(--color-gold) l c h / 0.2); }
+  50%       { box-shadow: 0 0 24px 4px oklch(from var(--color-gold) l c h / 0.4); }
+}
+
+@keyframes dot-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.4); opacity: 0.7; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-gold-pulse { animation: gold-pulse 2s ease-in-out infinite; }
+  .animate-gold-glow  { animation: gold-border-glow 2s ease-in-out infinite; }
+  .animate-dot-pulse  { animation: dot-pulse 1.5s ease-in-out infinite; }
+  .animate-fade-in-up { animation: fade-in-up 0.4s ease-out forwards; }
+}
+
+/* ============================================================
+   COMPONENT UTILITIES
+   ============================================================ */
+
+/* Gold halo radial gradient (Hero background) */
+.hero-halo {
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 60%,
+    oklch(from var(--color-gold) l c h / 0.06) 0%,
+    transparent 70%
+  );
+}
+
+/* Hero gradient overlay — 160deg diagonal comme la maquette Direction 1 */
+.hero-gradient {
+  background: linear-gradient(
+    160deg,
+    #1C1C1E 0%,
+    #242420 50%,
+    #1a1a18 100%
+  );
+}
+
+/* Card hover */
+.card-hover {
+  @apply transition-all duration-200;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-gold);
+}
+
+/* Sticky header blur */
+.header-blur {
+  backdrop-filter: blur(8px);
+  background-color: oklch(from var(--color-anthracite) l c h / 0.85);
+}
+
+/* Top banner ticker animation */
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 35s linear infinite;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Leaflet overrides — thème anthracite ── */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+.leaflet-popup-content {
+  margin: 0 !important;
+}
+.leaflet-container {
+  background: #1C1C1E;
 }
