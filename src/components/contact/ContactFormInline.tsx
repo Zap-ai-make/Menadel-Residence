@@ -131,7 +131,7 @@ export function ContactFormInline({
             value={countryCode}
             onChange={(e) => setCountryCode(e.target.value)}
             aria-label={t('phone')}
-            className="px-2 py-2 text-sm rounded-lg bg-[var(--color-anthracite)] border border-white/15 text-white focus:outline-none focus:border-[var(--color-gold)] w-28"
+            className="px-2 py-2.5 text-sm rounded-lg bg-[var(--color-anthracite)] border border-white/15 text-white focus:outline-none focus:border-[var(--color-gold)] w-28 min-h-[44px]"
           >
             <option value=""></option>
             {COUNTRY_CODES.map((c) => (
@@ -180,7 +180,7 @@ export function ContactFormInline({
       <button
         type="submit"
         disabled={sending || !name || !phone}
-        className="py-2.5 text-sm font-semibold rounded-lg bg-[var(--color-gold)] text-[var(--color-anthracite)] hover:bg-[var(--color-gold-light)] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        className="py-3 text-sm font-semibold rounded-lg bg-[var(--color-gold)] text-[var(--color-anthracite)] hover:bg-[var(--color-gold-light)] disabled:opacity-50 disabled:cursor-not-allowed transition-colors min-h-[44px]"
       >
         {sending ? t('submitting') : t('submit')}
       </button>
@@ -189,4 +189,4 @@ export function ContactFormInline({
 }
 
 const inputClass =
-  'w-full px-3 py-2 text-sm rounded-lg bg-[var(--color-anthracite)] border border-white/15 text-white placeholder-[var(--color-white-muted)]/40 focus:outline-none focus:border-[var(--color-gold)] transition-colors';
+  'w-full px-3 py-2.5 text-sm rounded-lg bg-[var(--color-anthracite)] border border-white/15 text-white placeholder-[var(--color-white-muted)]/40 focus:outline-none focus:border-[var(--color-gold)] transition-colors';

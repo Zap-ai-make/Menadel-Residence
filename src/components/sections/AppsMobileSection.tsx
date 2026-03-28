@@ -139,13 +139,13 @@ export function AppsMobileSection() {
 
   return (
     <section
-      className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 overflow-hidden"
+      className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 overflow-hidden"
       aria-labelledby="apps-heading"
     >
       <div className="max-w-[1280px] mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-8 sm:mb-14">
           <div className="inline-flex items-center gap-2 mb-4">
             <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[var(--color-gold)]">
               {c.eyebrow}
@@ -174,7 +174,7 @@ export function AppsMobileSection() {
             {/* Background glow */}
             <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-[var(--color-gold)]/5 blur-3xl pointer-events-none" />
 
-            <div className="relative flex flex-col sm:flex-row gap-8 items-center sm:items-start">
+            <div className="relative flex flex-col sm:flex-row gap-5 sm:gap-8 items-center sm:items-start">
               <PhoneMockup screens={c.bailleur.screens} />
 
               <div className="flex-1 text-center sm:text-left">
@@ -210,7 +210,7 @@ export function AppsMobileSection() {
           <div className="relative rounded-2xl border border-white/10 bg-[var(--color-anthracite-soft)] p-6 sm:p-8 overflow-hidden">
             <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-white/3 blur-3xl pointer-events-none" />
 
-            <div className="relative flex flex-col sm:flex-row gap-8 items-center sm:items-start">
+            <div className="relative flex flex-col sm:flex-row gap-5 sm:gap-8 items-center sm:items-start">
               <PhoneMockup screens={c.locataire.screens} />
 
               <div className="flex-1 text-center sm:text-left">

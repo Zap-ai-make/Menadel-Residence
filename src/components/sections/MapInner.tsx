@@ -51,11 +51,11 @@ export default function MapInner({ properties, locale }: Props) {
   }, []);
 
   return (
+    <div className="h-[260px] sm:h-[360px] lg:h-[420px] w-full rounded-2xl overflow-hidden border border-white/10">
     <MapContainer
       center={center}
       zoom={11}
-      style={{ height: '420px', width: '100%', borderRadius: '1rem' }}
-      className="border border-white/10"
+      style={{ height: '100%', width: '100%' }}
       scrollWheelZoom={false}
       attributionControl={false}
     >
@@ -91,7 +91,8 @@ export default function MapInner({ properties, locale }: Props) {
                 border: '1px solid rgba(255,255,255,0.1)',
                 borderRadius: '10px',
                 padding: '10px 12px',
-                minWidth: '180px',
+                minWidth: '160px',
+                maxWidth: '220px',
                 fontFamily: 'Inter, sans-serif',
               }}>
                 <div style={{ fontSize: '11px', color: '#9CA3AF', marginBottom: '2px' }}>
@@ -132,5 +133,6 @@ export default function MapInner({ properties, locale }: Props) {
         );
       })}
     </MapContainer>
+    </div>
   );
 }

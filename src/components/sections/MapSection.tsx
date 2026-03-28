@@ -49,7 +49,7 @@ export function MapSection({ properties }: Props) {
   if (mappable.length === 0) return null;
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 border-t border-white/10" aria-label={l.heading}>
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 border-t border-white/10" aria-label={l.heading}>
       <div className="max-w-[1280px] mx-auto">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
@@ -64,7 +64,7 @@ export function MapSection({ properties }: Props) {
           </div>
 
           {/* Legend */}
-          <div className="flex items-center gap-4 text-xs text-[var(--color-white-muted)]">
+          <div className="flex flex-wrap items-center gap-3 text-xs text-[var(--color-white-muted)]">
             <span className="flex items-center gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-[#22C55E] flex-shrink-0" />
               {l.legendAvailable}

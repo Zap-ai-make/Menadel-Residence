@@ -11,7 +11,7 @@ interface PriceDisplayProps {
 export function PriceDisplay({ priceXof, perMonth = false, className }: PriceDisplayProps) {
   const { format } = useCurrency();
   return (
-    <p className={className ?? 'font-serif text-3xl font-semibold text-[var(--color-gold)]'}>
+    <p className={className ?? 'font-serif text-2xl sm:text-3xl font-semibold text-[var(--color-gold)]'}>
       {format(priceXof)}
       {perMonth && <span className="text-sm font-normal text-[var(--color-white-muted)] ml-1">/mois</span>}
     </p>

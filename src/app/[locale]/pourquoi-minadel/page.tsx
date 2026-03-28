@@ -161,10 +161,10 @@ export default async function PourquoiMinadelPage({
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 mb-14">
+        <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-14">
           {c.stats.map((s) => (
             <div key={s.label} className="text-center p-4 rounded-xl bg-[var(--color-anthracite-soft)] border border-white/10">
-              <div className="font-serif text-3xl font-semibold text-[var(--color-gold)]">{s.value}</div>
+              <div className="font-serif text-2xl sm:text-3xl font-semibold text-[var(--color-gold)]">{s.value}</div>
               <div className="text-xs text-[var(--color-white-muted)] mt-1">{s.label}</div>
             </div>
           ))}

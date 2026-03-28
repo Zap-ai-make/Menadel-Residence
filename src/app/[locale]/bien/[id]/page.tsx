@@ -123,7 +123,7 @@ export default async function PropertyPage({
 
             {/* Extra photos */}
             {property.photos.length > 1 && (
-              <div className="grid grid-cols-3 gap-2 mb-8">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-8">
                 {property.photos.slice(1).map((photo, i) => (
                   <div key={i} className="relative aspect-[3/2] rounded-lg overflow-hidden bg-[var(--color-anthracite-muted)]">
                     <Image

@@ -281,7 +281,7 @@ export default async function GestionLocativePage({
       </div>
 
       {/* ── Apps mobiles — section pleine largeur ── */}
-      <div className="rounded-2xl border border-[var(--color-gold)]/15 bg-gradient-to-br from-[var(--color-anthracite-soft)] to-[var(--color-anthracite)] px-6 sm:px-10 py-12 mb-14">
+      <div className="rounded-2xl border border-[var(--color-gold)]/15 bg-gradient-to-br from-[var(--color-anthracite-soft)] to-[var(--color-anthracite)] px-4 sm:px-10 py-8 sm:py-12 mb-14">
         {/* Section header */}
         <div className="max-w-2xl mb-10">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-gold)] mb-3">

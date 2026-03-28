@@ -50,10 +50,10 @@ export function HowItWorksSection() {
   const c = CONTENT[locale] ?? CONTENT.fr;
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10" aria-labelledby="how-heading">
+    <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10" aria-labelledby="how-heading">
       <div className="max-w-[1280px] mx-auto">
         {/* Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-8 sm:mb-14">
           <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[var(--color-gold)] mb-3">
             {c.eyebrow}
           </p>
