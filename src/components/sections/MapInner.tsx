@@ -51,7 +51,7 @@ export default function MapInner({ properties, locale }: Props) {
   }, []);
 
   return (
-    <div className="h-[260px] sm:h-[360px] lg:h-[420px] w-full rounded-2xl overflow-hidden border border-white/10">
+    <div className="h-[260px] sm:h-[360px] lg:h-[420px] w-full rounded-2xl overflow-hidden border border-white/10 relative z-0">
     <MapContainer
       center={center}
       zoom={11}

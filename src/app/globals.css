@@ -200,3 +200,13 @@
 .leaflet-container {
   background: #1C1C1E;
 }
+/* Force la carte sous le header sticky (z-50) */
+.leaflet-pane,
+.leaflet-control,
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 10 !important;
+}
+.leaflet-popup-pane {
+  z-index: 20 !important;
+}
