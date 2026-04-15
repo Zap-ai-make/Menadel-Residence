@@ -9,7 +9,13 @@ const CONTENT = {
     },
     eyebrow: 'Service',
     heading: 'Notre procédure de prise en charge d\'un bien en gestion immobilière',
-    intro: 'Points clés de différenciation MENADEL Résidence : Approche haut de gamme et standardisée • Optimisation de la rentabilité du propriétaire • Gestion clé en main (de A à Z) • Transparence financière et reporting régulier conformément à la loi en vigueur.',
+    introTitle: 'Points clés de différenciation',
+    introPoints: [
+      'Approche haut de gamme et standardisée',
+      'Optimisation de la rentabilité du propriétaire',
+      'Gestion clé en main (de A à Z)',
+      'Transparence financière et reporting régulier conformément à la réglementation en vigueur',
+    ],
     steps: [
       {
         n: '1',
@@ -164,7 +170,13 @@ const CONTENT = {
     },
     eyebrow: 'Service',
     heading: 'Our property management onboarding procedure',
-    intro: 'MENADEL Residence key differentiators: Premium and standardized approach • Owner profitability optimization • Turnkey management (A to Z) • Financial transparency and regular reporting in compliance with applicable laws.',
+    introTitle: 'Key differentiators',
+    introPoints: [
+      'Premium and standardized approach',
+      'Owner profitability optimization',
+      'Turnkey management (A to Z)',
+      'Financial transparency and regular reporting in compliance with applicable regulations',
+    ],
     steps: [
       {
         n: '1',
@@ -432,9 +444,17 @@ export default async function GestionLocativePage({
             <h1 className="font-serif text-4xl sm:text-5xl font-semibold text-white leading-tight mb-4">
               {c.heading}
             </h1>
-            <p className="text-[var(--color-white-muted)] text-lg leading-relaxed max-w-2xl">
-              {c.intro}
-            </p>
+            <div className="max-w-2xl">
+              <p className="text-[var(--color-gold)] font-semibold mb-3">{c.introTitle}</p>
+              <ul className="space-y-2">
+                {c.introPoints.map((point, idx) => (
+                  <li key={idx} className="text-[var(--color-white-muted)] text-base leading-relaxed flex gap-2">
+                    <span className="text-[var(--color-gold)] flex-shrink-0">•</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* 10 étapes du parcours propriétaire */}

@@ -16,12 +16,6 @@ const CONTENT = {
       { icon: '🔧', title: 'Suivi locatif', desc: 'Interlocuteur dédié pour toute la durée du bail — interventions, renouvellement, questions.' },
       { icon: '💰', title: 'Tarifs négociés', desc: 'Prix marché vérifié. Pas de surcoût diaspora. Transparence totale sur les charges.' },
     ],
-    process: [
-      { n: '1', t: 'Définir vos critères', d: 'Ville, quartier, budget, nombre de chambres, équipements souhaités.' },
-      { n: '2', t: 'Sélection personnalisée', d: 'Nous vous envoyons une liste de biens correspondants avec photos et vidéos.' },
-      { n: '3', t: 'Visite (ou visite virtuelle)', d: 'Visite sur place ou visite vidéo en direct pour la diaspora.' },
-      { n: '4', t: 'Signature du bail', d: 'Contrat chez notre notaire partenaire. État des lieux et remise des clés.' },
-    ],
     conditions: [
       ['Durée minimum', '12 mois'],
       ['Dépôt de garantie', '2 à 3 mois de loyer (selon le bien)'],
@@ -44,12 +38,6 @@ const CONTENT = {
       { icon: '📋', title: 'Secure lease', desc: 'Notarised lease contract, photographic condition report, clear terms.' },
       { icon: '🔧', title: 'Rental support', desc: 'Dedicated contact for the entire lease — maintenance, renewal, questions.' },
       { icon: '💰', title: 'Negotiated rates', desc: 'Verified market price. No diaspora surcharge. Full transparency on charges.' },
-    ],
-    process: [
-      { n: '1', t: 'Define your criteria', d: 'City, neighbourhood, budget, number of bedrooms, desired amenities.' },
-      { n: '2', t: 'Personalised selection', d: 'We send you a list of matching properties with photos and videos.' },
-      { n: '3', t: 'Visit (or virtual tour)', d: 'On-site visit or live video tour for diaspora.' },
-      { n: '4', t: 'Lease signing', d: 'Contract at our partner notary. Condition report and key handover.' },
     ],
     conditions: [
       ['Minimum duration', '12 months'],
@@ -82,66 +70,57 @@ export default async function LocationLongueDureePage({
 
   return (
     <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="max-w-3xl">
+      {/* Header */}
+      <div className="mb-12">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-gold)] mb-3">
           {c.eyebrow}
         </p>
         <h1 className="font-serif text-4xl sm:text-5xl font-semibold text-white leading-tight mb-4">
           {c.heading}
         </h1>
-        <p className="text-[var(--color-white-muted)] text-lg leading-relaxed mb-12 max-w-prose">
+        <p className="text-[var(--color-white-muted)] text-lg leading-relaxed max-w-2xl">
           {c.intro}
         </p>
+      </div>
 
-        {/* Features */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-14">
-          {c.features.map((f) => (
-            <div key={f.title} className="p-5 rounded-xl bg-[var(--color-anthracite-soft)] border border-white/10">
-              <div className="text-2xl mb-2">{f.icon}</div>
-              <h2 className="font-semibold text-white mb-1">{f.title}</h2>
-              <p className="text-sm text-[var(--color-white-muted)] leading-relaxed">{f.desc}</p>
+      {/* Main Layout: Form Left, Content Right */}
+      <div className="grid grid-cols-1 lg:grid-cols-[480px_1fr] gap-12 lg:gap-20">
+        {/* LEFT COLUMN: Form */}
+        <div className="order-2 lg:order-1">
+          <div className="sticky top-8">
+            <div className="p-6 rounded-xl bg-[var(--color-anthracite-soft)] border border-white/10">
+              <h2 className="font-serif text-2xl font-semibold text-white mb-2">{c.formTitle}</h2>
+              <p className="text-sm text-[var(--color-white-muted)] mb-6">{c.formSubtitle}</p>
+              <ContactFormInline source="location-longue-duree" />
             </div>
-          ))}
-        </div>
-
-        {/* Process */}
-        <div className="mb-14">
-          <h2 className="font-serif text-2xl font-semibold text-white mb-6">
-            {locale === 'fr' ? 'Comment ça marche' : 'How it works'}
-          </h2>
-          <div className="space-y-4">
-            {c.process.map((step) => (
-              <div key={step.n} className="flex gap-4">
-                <div className="w-8 h-8 rounded-full border border-[var(--color-gold)]/30 flex items-center justify-center flex-shrink-0">
-                  <span className="text-sm text-[var(--color-gold)] font-semibold">{step.n}</span>
-                </div>
-                <div>
-                  <p className="font-semibold text-white text-sm">{step.t}</p>
-                  <p className="text-sm text-[var(--color-white-muted)]">{step.d}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
 
-        {/* Conditions */}
-        <div className="p-6 rounded-xl bg-[var(--color-anthracite-soft)] border border-white/10 mb-12">
-          <h2 className="font-serif text-xl font-semibold text-white mb-4">Conditions</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {c.conditions.map(([label, value]) => (
-              <div key={label} className="flex gap-2 text-sm">
-                <span className="text-[var(--color-white-muted)] min-w-[140px]">{label} :</span>
-                <span className="text-white font-medium">{value}</span>
+        {/* RIGHT COLUMN: Content */}
+        <div className="order-1 lg:order-2">
+          {/* Features */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            {c.features.map((f) => (
+              <div key={f.title} className="p-5 rounded-xl bg-[var(--color-anthracite-soft)] border border-white/10">
+                <div className="text-2xl mb-2">{f.icon}</div>
+                <h2 className="font-semibold text-white mb-1">{f.title}</h2>
+                <p className="text-sm text-[var(--color-white-muted)] leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
-        </div>
 
-        {/* Contact form */}
-        <div className="p-6 rounded-xl bg-[var(--color-anthracite-soft)] border border-white/10">
-          <h2 className="font-serif text-2xl font-semibold text-white mb-2">{c.formTitle}</h2>
-          <p className="text-sm text-[var(--color-white-muted)] mb-6">{c.formSubtitle}</p>
-          <ContactFormInline source="location-longue-duree" />
+          {/* Conditions */}
+          <div className="p-6 rounded-xl bg-[var(--color-anthracite-soft)] border border-white/10">
+            <h2 className="font-serif text-xl font-semibold text-white mb-4">Conditions</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {c.conditions.map(([label, value]) => (
+                <div key={label} className="flex gap-2 text-sm">
+                  <span className="text-[var(--color-white-muted)] min-w-[120px]">{label} :</span>
+                  <span className="text-white font-medium">{value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
