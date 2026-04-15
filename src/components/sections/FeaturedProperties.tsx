@@ -13,8 +13,15 @@ interface FeaturedPropertiesProps {
 }
 
 type FilterKey = 'all' | PropertyType;
+type FilterLabelKey =
+  | 'filterAll'
+  | 'parcelle'
+  | 'villa'
+  | 'terrain'
+  | 'appartement'
+  | 'immeuble';
 
-const FILTERS: { key: FilterKey; labelKey: string }[] = [
+const FILTERS: { key: FilterKey; labelKey: FilterLabelKey }[] = [
   { key: 'all',         labelKey: 'filterAll' },
   { key: 'parcelle',    labelKey: 'parcelle' },
   { key: 'villa',       labelKey: 'villa' },
@@ -69,7 +76,7 @@ export function FeaturedProperties({ properties }: FeaturedPropertiesProps) {
                 )}
                 aria-pressed={activeFilter === key}
               >
-                {t(labelKey as any)}
+                {t(labelKey)}
               </button>
             ))}
           </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ContactFormInline } from '@/components/contact/ContactFormInline';
+import { ShortTermRentalForm } from '@/components/contact/ShortTermRentalForm';
 
 const CONTENT = {
   fr: {
@@ -19,7 +19,7 @@ const CONTENT = {
     conditions: [
       ['Durée minimum', '3 nuits'],
       ['Paiement', 'À l\'avance (Mobile Money, virement)'],
-      ['Caution', 'Équivalent 1 nuit (restituée au départ)'],
+      ['Caution', '10% du montant total (à partir de 5 nuitées)'],
       ['Annulation', '48h avant l\'arrivée (remboursement intégral)'],
     ],
     formTitle: 'Réserver un logement',
@@ -42,7 +42,7 @@ const CONTENT = {
     conditions: [
       ['Minimum stay', '3 nights'],
       ['Payment', 'In advance (Mobile Money, wire transfer)'],
-      ['Deposit', 'Equivalent of 1 night (refunded on departure)'],
+      ['Deposit', '10% of total amount (from 5 nights)'],
       ['Cancellation', '48h before arrival (full refund)'],
     ],
     formTitle: 'Book accommodation',
@@ -70,46 +70,57 @@ export default async function LocationCourtSejourPage({
 
   return (
     <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="max-w-3xl">
+      {/* Header */}
+      <div className="mb-12">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-gold)] mb-3">
           {c.eyebrow}
         </p>
         <h1 className="font-serif text-4xl sm:text-5xl font-semibold text-white leading-tight mb-4">
           {c.heading}
         </h1>
-        <p className="text-[var(--color-white-muted)] text-lg leading-relaxed mb-12 max-w-prose">
+        <p className="text-[var(--color-white-muted)] text-lg leading-relaxed max-w-2xl">
           {c.intro}
         </p>
+      </div>
 
-        {/* Features */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-14">
-          {c.features.map((f) => (
-            <div key={f.title} className="p-5 rounded-xl bg-[var(--color-anthracite-soft)] border border-white/10">
-              <div className="text-2xl mb-2">{f.icon}</div>
-              <h2 className="font-semibold text-white mb-1">{f.title}</h2>
-              <p className="text-sm text-[var(--color-white-muted)] leading-relaxed">{f.desc}</p>
+      {/* Main Layout: Form Left, Content Right */}
+      <div className="grid grid-cols-1 lg:grid-cols-[480px_1fr] gap-12 lg:gap-20">
+        {/* LEFT COLUMN: Form */}
+        <div className="order-2 lg:order-1">
+          <div className="sticky top-8">
+            <div className="p-6 rounded-xl bg-[var(--color-anthracite-soft)] border border-white/10">
+              <h2 className="font-serif text-2xl font-semibold text-white mb-2">{c.formTitle}</h2>
+              <p className="text-sm text-[var(--color-white-muted)] mb-6">{c.formSubtitle}</p>
+              <ShortTermRentalForm source="location-court-sejour" />
             </div>
-          ))}
-        </div>
-
-        {/* Conditions */}
-        <div className="p-6 rounded-xl bg-[var(--color-anthracite-soft)] border border-white/10 mb-12">
-          <h2 className="font-serif text-xl font-semibold text-white mb-4">Conditions</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {c.conditions.map(([label, value]) => (
-              <div key={label} className="flex gap-2 text-sm">
-                <span className="text-[var(--color-white-muted)] min-w-[120px]">{label} :</span>
-                <span className="text-white font-medium">{value}</span>
-              </div>
-            ))}
           </div>
         </div>
 
-        {/* Contact form */}
-        <div className="p-6 rounded-xl bg-[var(--color-anthracite-soft)] border border-white/10">
-          <h2 className="font-serif text-2xl font-semibold text-white mb-2">{c.formTitle}</h2>
-          <p className="text-sm text-[var(--color-white-muted)] mb-6">{c.formSubtitle}</p>
-          <ContactFormInline source="location-court-sejour" />
+        {/* RIGHT COLUMN: Content */}
+        <div className="order-1 lg:order-2">
+          {/* Features */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            {c.features.map((f) => (
+              <div key={f.title} className="p-5 rounded-xl bg-[var(--color-anthracite-soft)] border border-white/10">
+                <div className="text-2xl mb-2">{f.icon}</div>
+                <h2 className="font-semibold text-white mb-1">{f.title}</h2>
+                <p className="text-sm text-[var(--color-white-muted)] leading-relaxed">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Conditions */}
+          <div className="p-6 rounded-xl bg-[var(--color-anthracite-soft)] border border-white/10">
+            <h2 className="font-serif text-xl font-semibold text-white mb-4">Conditions</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {c.conditions.map(([label, value]) => (
+                <div key={label} className="flex gap-2 text-sm">
+                  <span className="text-[var(--color-white-muted)] min-w-[120px]">{label} :</span>
+                  <span className="text-white font-medium">{value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

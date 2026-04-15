@@ -1,12 +1,25 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Anthropic from '@anthropic-ai/sdk';
 import { getProperties, getMarketGrid } from '@/lib/saas-client';
-import { type PropertyType } from '@/lib/types';
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 // Rate limiting — simple in-memory (pour production, utiliser Vercel Edge KV)
 const rateLimitMap = new Map<string, { count: number; reset: number }>();
+
+interface G3MarketContext {
+  summary: string;
+  priceRange?: string;
+  trend?: 'stable' | 'hausse' | 'baisse';
+  type?: string;
+  city?: string;
+}
+
+interface G3ParsedResponse {
+  propertyIds?: string[];
+  marketContext?: G3MarketContext;
+  message?: string;
+}
 
 function checkRateLimit(ip: string): boolean {
   const now = Date.now();
@@ -110,7 +123,7 @@ Réponds en JSON avec cette structure exacte :
     }
 
     // Parse Claude's JSON response
-    let parsed: { propertyIds: string[]; marketContext: any; message: string };
+    let parsed: G3ParsedResponse;
     try {
       const jsonMatch = content.text.match(/\{[\s\S]*\}/);
       if (!jsonMatch) throw new Error('No JSON');

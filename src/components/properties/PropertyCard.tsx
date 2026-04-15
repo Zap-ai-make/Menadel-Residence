@@ -13,6 +13,11 @@ import { WHATSAPP_NUMBER } from '@/lib/config';
 // Standard Ouaga plot = 300m²
 const STANDARD_PLOT_M2 = 300;
 const PLOT_TYPES = ['parcelle', 'terrain'];
+type PropertyLabelKey = Property['type'] | 'location_type';
+
+function getPropertyLabelKey(type: Property['type']): PropertyLabelKey {
+  return type === 'location' ? 'location_type' : type;
+}
 
 interface PropertyCardProps {
   property: Property;
@@ -34,7 +39,7 @@ export function PropertyCard({ property, variant = 'grid' }: PropertyCardProps) 
     ? Math.round(property.surfaceM2 / STANDARD_PLOT_M2)
     : null;
 
-  const typeLabel = t(property.type === 'location' ? 'location_type' : property.type as any);
+  const typeLabel = t(getPropertyLabelKey(property.type));
 
   // ── List variant (compact horizontal — used in G3 results) ──
   if (variant === 'list') {

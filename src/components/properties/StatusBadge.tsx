@@ -6,12 +6,16 @@ const STATUS_CONFIG: Record<PropertyStatus, { color: string; dot: string; animat
   'disponible':     { color: 'text-[var(--color-status-available)] bg-[var(--color-status-available)]/10 border-[var(--color-status-available)]/20', dot: 'bg-[var(--color-status-available)]', animated: true },
   'sous-compromis': { color: 'text-[var(--color-status-pending)] bg-[var(--color-status-pending)]/10 border-[var(--color-status-pending)]/20', dot: 'bg-[var(--color-status-pending)]', animated: false },
   'vendu':          { color: 'text-[var(--color-status-sold)] bg-[var(--color-status-sold)]/10 border-[var(--color-status-sold)]/20', dot: 'bg-[var(--color-status-sold)]', animated: false },
+  'loué':           { color: 'text-[var(--color-status-sold)] bg-[var(--color-status-sold)]/10 border-[var(--color-status-sold)]/20', dot: 'bg-[var(--color-status-sold)]', animated: false },
+  'réservé':        { color: 'text-[var(--color-status-pending)] bg-[var(--color-status-pending)]/10 border-[var(--color-status-pending)]/20', dot: 'bg-[var(--color-status-pending)]', animated: false },
 };
 
-const STATUS_KEYS: Record<PropertyStatus, 'available' | 'pending' | 'sold'> = {
+const STATUS_KEYS: Record<PropertyStatus, 'available' | 'pending' | 'sold' | 'rented' | 'reserved'> = {
   'disponible': 'available',
   'sous-compromis': 'pending',
   'vendu': 'sold',
+  'loué': 'rented',
+  'réservé': 'reserved',
 };
 
 interface StatusBadgeProps {

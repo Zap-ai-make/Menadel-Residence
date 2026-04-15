@@ -12,10 +12,28 @@ import { cn } from '@/lib/utils';
 import { WHATSAPP_NUMBER } from '@/lib/config';
 
 // ── Structure de navigation ──
+type NavKey = 'catalogue' | 'rent' | 'abroadGuide' | 'entrust' | 'agency';
+type NavChildKey =
+  | 'shortTerm'
+  | 'longTerm'
+  | 'rentalMgmt'
+  | 'sellProperty'
+  | 'representations'
+  | 'partnerships'
+  | 'whyMinadel';
+type NavDescKey =
+  | 'shortTermDesc'
+  | 'longTermDesc'
+  | 'rentalMgmtDesc'
+  | 'sellPropertyDesc'
+  | 'representationsDesc'
+  | 'partnershipsDesc'
+  | 'whyMinadelDesc';
+
 type NavItem = {
-  key: string;
+  key: NavKey;
   href?: string;
-  children?: { key: string; href: string; icon?: string; descKey?: string }[];
+  children?: { key: NavChildKey; href: string; icon?: string; descKey?: NavDescKey }[];
 };
 
 const NAV_STRUCTURE: NavItem[] = [
@@ -81,10 +99,10 @@ export function Header() {
   const getDropdownItems = (children: NavItem['children']): NavDropdownItem[] => {
     if (!children) return [];
     return children.map((child) => ({
-      label: t(child.key as any),
+      label: t(child.key),
       href: child.href,
       icon: child.icon,
-      description: child.descKey ? t(child.descKey as any) : undefined,
+      description: child.descKey ? t(child.descKey) : undefined,
     }));
   };
 
@@ -147,7 +165,7 @@ export function Header() {
                         isActive && 'text-white border-[var(--color-gold)]'
                       )}
                     >
-                      {t(item.key as any)}
+                      {t(item.key)}
                     </Link>
                   );
                 }
@@ -156,7 +174,7 @@ export function Header() {
                 return (
                   <NavDropdown
                     key={item.key}
-                    label={t(item.key as any)}
+                    label={t(item.key)}
                     items={getDropdownItems(item.children)}
                     isActive={isActive}
                   />
@@ -305,7 +323,7 @@ function MobileNavItem({
             : 'text-[var(--color-white-muted)] hover:text-white hover:bg-white/5'
         )}
       >
-        {t(item.key as any)}
+        {t(item.key)}
       </Link>
     );
   }
@@ -324,7 +342,7 @@ function MobileNavItem({
             : 'text-[var(--color-white-muted)] hover:text-white hover:bg-white/5'
         )}
       >
-        <span>{t(item.key as any)}</span>
+        <span>{t(item.key)}</span>
         <ChevronDown
           size={16}
           className={cn(
@@ -355,7 +373,7 @@ function MobileNavItem({
               )}
             >
               {child.icon && <span className="text-base">{child.icon}</span>}
-              <span>{t(child.key as any)}</span>
+              <span>{t(child.key)}</span>
             </Link>
           ))}
         </div>

@@ -1,0 +1,48 @@
+
+> minadel-residence@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.1 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.69:3000
+- Environments: .env.local
+✓ Ready in 2.1s
+
+ GET /fr 200 in 3.9s (next.js: 1073ms, proxy.ts: 13ms, generate-params: 683ms, application-code: 2.8s)
+ GET /api/exchange-rates 200 in 1013ms (next.js: 153ms, application-code: 860ms)
+✓ Compiled in 1824ms
+✓ Compiled in 309ms
+ GET /fr 200 in 1320ms (next.js: 627ms, proxy.ts: 270ms, generate-params: 37ms, application-code: 424ms)
+ GET /fr 200 in 191ms (next.js: 14ms, proxy.ts: 52ms, generate-params: 82µs, application-code: 125ms)
+✓ Compiled in 354ms
+ GET /fr 200 in 492ms (next.js: 268ms, proxy.ts: 39ms, generate-params: 9ms, application-code: 186ms)
+✓ Compiled in 247ms
+ GET /fr 200 in 434ms (next.js: 247ms, proxy.ts: 15ms, generate-params: 15ms, application-code: 173ms)
+✓ Compiled in 274ms
+ GET /fr 200 in 432ms (next.js: 215ms, proxy.ts: 11ms, generate-params: 41ms, application-code: 206ms)
+ GET /fr 200 in 3.2s (next.js: 20ms, proxy.ts: 12ms, generate-params: 9ms, application-code: 3.2s)
+ GET /api/exchange-rates 200 in 1188ms (next.js: 17ms, application-code: 1171ms)
+ GET /fr 200 in 1684ms (next.js: 29ms, proxy.ts: 13ms, generate-params: 13ms, application-code: 1642ms)
+ GET /api/exchange-rates 200 in 910ms (next.js: 9ms, application-code: 901ms)
+✓ Compiled in 255ms
+ GET /fr 200 in 691ms (next.js: 439ms, proxy.ts: 27ms, generate-params: 18ms, application-code: 225ms)
+✓ Compiled in 1816ms
+ GET /fr 200 in 1594ms (next.js: 403ms, proxy.ts: 10ms, generate-params: 12ms, application-code: 1180ms)
+ GET /fr 200 in 1030ms (next.js: 133ms, proxy.ts: 217ms, generate-params: 58µs, application-code: 680ms)
+ GET /fr 200 in 524ms (next.js: 176ms, proxy.ts: 77ms, generate-params: 51µs, application-code: 271ms)
+ GET /fr 200 in 539ms (next.js: 43ms, proxy.ts: 77ms, generate-params: 54µs, application-code: 418ms)
+ GET /fr 200 in 541ms (next.js: 120ms, proxy.ts: 77ms, generate-params: 43µs, application-code: 344ms)
+✓ Compiled in 447ms
+ GET /fr 200 in 1442ms (next.js: 329ms, proxy.ts: 162ms, generate-params: 55ms, application-code: 950ms)
+ GET /fr 200 in 755ms (next.js: 23ms, proxy.ts: 92ms, generate-params: 493µs, application-code: 640ms)
+ GET /fr 200 in 535ms (next.js: 204ms, proxy.ts: 61ms, generate-params: 337µs, application-code: 270ms)
+ GET /fr 200 in 539ms (next.js: 115ms, proxy.ts: 57ms, generate-params: 34µs, application-code: 367ms)
+ GET /fr 200 in 547ms (next.js: 51ms, proxy.ts: 55ms, generate-params: 49µs, application-code: 441ms)
+✓ Compiled in 801ms
+✓ Compiled in 309ms
+ GET /fr 200 in 4.3s (next.js: 800ms, proxy.ts: 246ms, generate-params: 82ms, application-code: 3.2s)
+ GET /api/exchange-rates 200 in 1196ms (next.js: 188ms, application-code: 1009ms)
+ GET /fr 200 in 3.0s (next.js: 301ms, proxy.ts: 709ms, generate-params: 110ms, application-code: 2.0s)
+ GET /api/exchange-rates 200 in 1104ms (next.js: 6ms, application-code: 1098ms)
+ GET /fr 200 in 1473ms (next.js: 32ms, proxy.ts: 8ms, generate-params: 15ms, application-code: 1433ms)
+ GET /api/exchange-rates 200 in 822ms (next.js: 8ms, application-code: 814ms)

@@ -7,7 +7,12 @@ import { type Property, type PropertyType } from '@/lib/types';
 import { PropertyCard } from '@/components/properties/PropertyCard';
 import { WHATSAPP_NUMBER } from '@/lib/config';
 
-const TYPES: PropertyType[] = ['parcelle', 'villa', 'terrain', 'appartement', 'immeuble', 'location'];
+const TYPES: PropertyType[] = ['parcelle', 'villa', 'terrain', 'appartement', 'immeuble', 'duplex', 'maison', 'hotel', 'bureau', 'commerce', 'location'];
+type PropertyLabelKey = PropertyType | 'location_type';
+
+function getPropertyLabelKey(type: PropertyType): PropertyLabelKey {
+  return type === 'location' ? 'location_type' : type;
+}
 
 interface CatalogueClientProps {
   properties: Property[];
@@ -101,7 +106,7 @@ export function CatalogueClient({ properties, stalenessDate }: CatalogueClientPr
               onClick={() => setFilterType(type)}
               className={chipClass(filterType === type)}
             >
-              {t(type === 'location' ? 'location_type' : type as any)}
+              {t(getPropertyLabelKey(type))}
             </button>
           ))}
         </div>

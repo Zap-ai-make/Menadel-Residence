@@ -1,28 +1,56 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useSyncExternalStore } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 
 const STORAGE_KEY = 'gdpr-consent';
+const STORAGE_EVENT = 'gdpr-consent-change';
+
+function subscribe(onStoreChange: () => void) {
+  if (typeof window === 'undefined') {
+    return () => {};
+  }
+
+  const handleStorage = (event: StorageEvent) => {
+    if (event.key === null || event.key === STORAGE_KEY) {
+      onStoreChange();
+    }
+  };
+
+  window.addEventListener('storage', handleStorage);
+  window.addEventListener(STORAGE_EVENT, onStoreChange);
+
+  return () => {
+    window.removeEventListener('storage', handleStorage);
+    window.removeEventListener(STORAGE_EVENT, onStoreChange);
+  };
+}
+
+function getConsentVisibilitySnapshot() {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  return !window.localStorage.getItem(STORAGE_KEY);
+}
 
 export function GdprBanner() {
   const t = useTranslations('gdpr');
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const consent = localStorage.getItem(STORAGE_KEY);
-    if (!consent) setVisible(true);
-  }, []);
+  const visible = useSyncExternalStore(
+    subscribe,
+    getConsentVisibilitySnapshot,
+    () => false
+  );
 
   const accept = () => {
-    localStorage.setItem(STORAGE_KEY, 'accepted');
-    setVisible(false);
+    window.localStorage.setItem(STORAGE_KEY, 'accepted');
+    window.dispatchEvent(new Event(STORAGE_EVENT));
   };
 
   const decline = () => {
-    localStorage.setItem(STORAGE_KEY, 'declined');
-    setVisible(false);
+    window.localStorage.setItem(STORAGE_KEY, 'declined');
+    window.dispatchEvent(new Event(STORAGE_EVENT));
   };
 
   if (!visible) return null;

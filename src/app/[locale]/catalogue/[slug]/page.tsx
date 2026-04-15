@@ -45,6 +45,12 @@ export async function generateMetadata({
     terrain: locale === 'fr' ? 'Terrains' : 'Land',
     appartement: locale === 'fr' ? 'Appartements' : 'Apartments',
     immeuble: locale === 'fr' ? 'Immeubles' : 'Buildings',
+    duplex: 'Duplex',
+    maison: locale === 'fr' ? 'Maisons' : 'Houses',
+    bureau: locale === 'fr' ? 'Bureaux' : 'Offices',
+    commerce: locale === 'fr' ? 'Commerces' : 'Commercial',
+    entrepot: locale === 'fr' ? 'Entrepôts' : 'Warehouses',
+    hotel: locale === 'fr' ? 'Hôtels' : 'Hotels',
     location: locale === 'fr' ? 'Locations' : 'Rentals',
   };
 
@@ -81,6 +87,12 @@ export default async function CatalogueSlugPage({
     terrain:     { fr: 'Terrains', en: 'Land' },
     appartement: { fr: 'Appartements', en: 'Apartments' },
     immeuble:    { fr: 'Immeubles', en: 'Buildings' },
+    duplex:      { fr: 'Duplex', en: 'Duplex' },
+    maison:      { fr: 'Maisons', en: 'Houses' },
+    bureau:      { fr: 'Bureaux', en: 'Offices' },
+    commerce:    { fr: 'Commerces', en: 'Commercial' },
+    entrepot:    { fr: 'Entrepôts', en: 'Warehouses' },
+    hotel:       { fr: 'Hôtels', en: 'Hotels' },
     location:    { fr: 'Locations', en: 'Rentals' },
   };
 

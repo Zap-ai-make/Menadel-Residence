@@ -42,7 +42,6 @@ export default async function PropertyPage({
   const property = await getPropertyById(id);
   if (!property) notFound();
 
-  const t = await getTranslations('property');
   const tContact = await getTranslations('contact');
 
   const standardPlots = PLOT_TYPES.includes(property.type)
@@ -212,7 +211,7 @@ export default async function PropertyPage({
               </div>
 
               {/* WhatsApp CTA */}
-              {property.status !== 'vendu' && (
+              {property.status !== 'vendu' && property.status !== 'loué' && (
                 <WhatsAppCTA
                   phone={WHATSAPP_NUMBER}
                   message={whatsappMsg}
@@ -222,7 +221,7 @@ export default async function PropertyPage({
               )}
 
               {/* Contact form */}
-              {property.status !== 'vendu' && (
+              {property.status !== 'vendu' && property.status !== 'loué' && (
                 <div className="p-5 rounded-xl bg-[var(--color-anthracite-soft)] border border-white/10">
                   <h2 className="font-serif text-lg font-semibold text-white mb-4">
                     {labels.enquiry}

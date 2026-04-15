@@ -1,13 +1,19 @@
 'use client';
 
-import { useState, useRef, useId, useEffect } from 'react';
+import { useId, useRef, useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Loader2, AlertCircle } from 'lucide-react';
 import { type Property } from '@/lib/types';
 import { PropertyCard } from '@/components/properties/PropertyCard';
 import { cn } from '@/lib/utils';
 
-type G3State = 'idle' | 'focus' | 'loading' | 'result' | 'error-fallback' | 'offline';
+type G3State =
+  | 'idle'
+  | 'focus'
+  | 'loading'
+  | 'result'
+  | 'error-fallback'
+  | 'offline';
 
 interface G3Result {
   properties: Property[];
@@ -25,12 +31,10 @@ interface G3WidgetProps {
   variant?: 'hero' | 'compact';
 }
 
-const PLACEHOLDERS = [
-  'Décrivez votre projet : "Villa 3 chambres à Ouaga 2000, budget 35M FCFA..."',
-  'Looking for a villa near schools in Ouagadougou…',
-  'J\'ai un budget de 50M FCFA pour investir à Bobo…',
-  'I want to buy land to build in 2 years…',
-];
+const PLACEHOLDER_BY_LOCALE = {
+  fr: 'Décrivez votre projet : "Villa 3 chambres à Ouaga 2000, budget 35M FCFA..."',
+  en: 'Looking for a villa near schools in Ouagadougou...',
+} as const;
 
 export function G3Widget({ variant = 'hero' }: G3WidgetProps) {
   const t = useTranslations('hero');
@@ -42,14 +46,11 @@ export function G3Widget({ variant = 'hero' }: G3WidgetProps) {
   const [state, setState] = useState<G3State>('idle');
   const [query, setQuery] = useState('');
   const [result, setResult] = useState<G3Result | null>(null);
-  const [placeholderIdx, setPlaceholderIdx] = useState(0);
-
-  useEffect(() => {
-    setPlaceholderIdx(Math.floor(Math.random() * PLACEHOLDERS.length));
-  }, []);
 
   const isHero = variant === 'hero';
   const isError = state === 'error-fallback' || state === 'offline';
+  const placeholder =
+    locale === 'fr' ? PLACEHOLDER_BY_LOCALE.fr : PLACEHOLDER_BY_LOCALE.en;
 
   async function handleSubmit(e?: React.FormEvent) {
     e?.preventDefault();
@@ -66,7 +67,11 @@ export function G3Widget({ variant = 'hero' }: G3WidgetProps) {
       });
 
       if (!res.ok) {
-        if (res.status === 503) { setState('offline'); return; }
+        if (res.status === 503) {
+          setState('offline');
+          return;
+        }
+
         setState('error-fallback');
         return;
       }
@@ -105,7 +110,6 @@ export function G3Widget({ variant = 'hero' }: G3WidgetProps) {
       role="search"
       aria-label="Configurateur Patrimonial G3"
     >
-      {/* Input form — flex layout comme la maquette : icon | textarea | bouton */}
       <form
         onSubmit={handleSubmit}
         className={cn(
@@ -115,14 +119,13 @@ export function G3Widget({ variant = 'hero' }: G3WidgetProps) {
             ? 'border-[var(--color-status-sold)] shadow-[0_0_0_4px_rgba(239,68,68,0.1)]'
             : 'border-[var(--color-gold)] shadow-[0_0_0_4px_rgba(201,168,76,0.1)]',
           'bg-[var(--color-anthracite-soft)]',
-          state === 'loading' && 'opacity-75',
+          state === 'loading' && 'opacity-75'
         )}
       >
         <label htmlFor={inputId} className="sr-only">
           {t('g3Placeholder')}
         </label>
 
-        {/* ✦ icon */}
         <span
           className="flex items-center px-4 text-[var(--color-gold)] text-lg shrink-0 select-none"
           aria-hidden="true"
@@ -130,7 +133,6 @@ export function G3Widget({ variant = 'hero' }: G3WidgetProps) {
           ✦
         </span>
 
-        {/* Textarea */}
         <textarea
           ref={inputRef}
           id={inputId}
@@ -142,15 +144,16 @@ export function G3Widget({ variant = 'hero' }: G3WidgetProps) {
           }}
           onKeyDown={handleKeyDown}
           onFocus={() => state === 'idle' && setState('focus')}
-          onBlur={() => { if (!query && state === 'focus') setState('idle'); }}
-          placeholder={state === 'loading' ? t('g3Analyzing') : PLACEHOLDERS[placeholderIdx]}
+          onBlur={() => {
+            if (!query && state === 'focus') setState('idle');
+          }}
+          placeholder={state === 'loading' ? t('g3Analyzing') : placeholder}
           disabled={state === 'loading'}
           rows={1}
           className="flex-1 bg-transparent border-none outline-none resize-none py-[18px] pr-2 text-[15px] text-white placeholder-[var(--color-white-muted)] focus:outline-none"
           aria-describedby={result ? resultsId : undefined}
         />
 
-        {/* Submit button — pleine hauteur, pas de border-radius propre (overflow:hidden sur wrapper) */}
         <button
           type="submit"
           disabled={!query.trim() || state === 'loading'}
@@ -167,14 +170,15 @@ export function G3Widget({ variant = 'hero' }: G3WidgetProps) {
         </button>
       </form>
 
-      {/* Hint — première partie blanche, deuxième partie dorée comme la maquette */}
       {(state === 'idle' || state === 'focus') && (
         <p className="mt-2.5 text-[12px] text-[var(--color-white-muted)] text-center">
-          {t('g3Label')}<em className="not-italic text-[var(--color-gold)]">{t('g3LabelHighlight')}</em>
+          {t('g3Label')}
+          <em className="not-italic text-[var(--color-gold)]">
+            {t('g3LabelHighlight')}
+          </em>
         </p>
       )}
 
-      {/* Results */}
       {state === 'result' && result && (
         <div
           id={resultsId}
@@ -183,16 +187,21 @@ export function G3Widget({ variant = 'hero' }: G3WidgetProps) {
         >
           {result.marketContext && (
             <div className="mb-4 p-3 rounded-lg bg-[var(--color-anthracite-soft)] border border-white/10">
-              <p className="text-xs text-[var(--color-white-muted)]">{result.marketContext.summary}</p>
+              <p className="text-xs text-[var(--color-white-muted)]">
+                {result.marketContext.summary}
+              </p>
               {result.marketContext.priceRange && (
                 <p className="text-xs text-[var(--color-gold)] mt-1">
-                  {locale === 'fr' ? 'Fourchette de marché' : 'Market range'} : {result.marketContext.priceRange}
+                  {locale === 'fr' ? 'Fourchette de marché' : 'Market range'}:{' '}
+                  {result.marketContext.priceRange}
                 </p>
               )}
             </div>
           )}
 
-          <p className="text-sm text-[var(--color-white-muted)] mb-4">{result.message}</p>
+          <p className="text-sm text-[var(--color-white-muted)] mb-4">
+            {result.message}
+          </p>
 
           {result.properties.length > 0 ? (
             <div className="grid grid-cols-1 gap-4">
@@ -203,8 +212,8 @@ export function G3Widget({ variant = 'hero' }: G3WidgetProps) {
           ) : (
             <p className="text-sm text-[var(--color-white-muted)]/60 text-center py-4">
               {locale === 'fr'
-                ? 'Aucun bien ne correspond exactement à votre projet — nos conseillers peuvent vous aider.'
-                : 'No property matches your project exactly — our advisors can help.'}
+                ? 'Aucun bien ne correspond exactement à votre projet - nos conseillers peuvent vous aider.'
+                : 'No property matches your project exactly - our advisors can help.'}
             </p>
           )}
 
@@ -217,14 +226,16 @@ export function G3Widget({ variant = 'hero' }: G3WidgetProps) {
         </div>
       )}
 
-      {/* Fallback form */}
       {isError && (
         <div
           aria-live="assertive"
           className="mt-4 p-4 rounded-xl bg-[var(--color-anthracite-soft)] border border-[var(--color-status-sold)]/20 animate-fade-in-up"
         >
           <div className="flex items-start gap-2 mb-3">
-            <AlertCircle size={14} className="text-[var(--color-status-sold)] mt-0.5 shrink-0" />
+            <AlertCircle
+              size={14}
+              className="text-[var(--color-status-sold)] mt-0.5 shrink-0"
+            />
             <p className="text-xs text-[var(--color-white-muted)]">
               {state === 'offline' ? t('g3Unavailable') : t('g3FallbackMsg')}
             </p>
@@ -235,8 +246,6 @@ export function G3Widget({ variant = 'hero' }: G3WidgetProps) {
     </div>
   );
 }
-
-// ── Fallback contact form ──────────────────────────────────────
 
 function FallbackContactForm({ prefillMessage }: { prefillMessage: string }) {
   const t = useTranslations('contact');
@@ -252,7 +261,12 @@ function FallbackContactForm({ prefillMessage }: { prefillMessage: string }) {
       await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, message: prefillMessage, source: 'g3-fallback' }),
+        body: JSON.stringify({
+          name,
+          phone,
+          message: prefillMessage,
+          source: 'g3-fallback',
+        }),
       });
       setSent(true);
     } catch {
