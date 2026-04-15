@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ContactFormInline } from '@/components/contact/ContactFormInline';
+import { PropertyManagementForm } from '@/components/contact/PropertyManagementForm';
 
 const CONTENT = {
   fr: {
@@ -8,22 +8,105 @@ const CONTENT = {
       description: 'Déléguez la gestion de votre bien immobilier au Burkina Faso à Menadel Residence. Recherche locataire, encaissement loyers, reporting mensuel, virements internationaux.',
     },
     eyebrow: 'Service',
-    heading: 'Confier en gestion locative',
-    intro: 'Votre bien au Burkina Faso génère des revenus pendant que vous vivez à l\'étranger. Menadel Residence gère tout sur place — vous recevez votre loyer chaque mois sans vous occuper de rien.',
-    services: [
-      { icon: '🔍', title: 'Recherche locataire', desc: 'Sélection rigoureuse, vérification solvabilité, état des lieux d\'entrée photographié.' },
-      { icon: '💰', title: 'Encaissement & reversement', desc: 'Loyers encaissés et reversés sur votre compte (BF ou international) avant le 10 de chaque mois.' },
-      { icon: '🔧', title: 'Entretien courant', desc: 'Petites réparations et entretien régulier gérés par nos prestataires vérifiés, sur présentation de justificatifs.' },
-      { icon: '📊', title: 'Reporting mensuel', desc: 'Rapport mensuel détaillé : loyers perçus, travaux, état du bien, photos sur demande.' },
-      { icon: '📄', title: 'Gestion administrative', desc: 'Renouvellements de bail, états des lieux, résiliation — toute la paperasse gérée pour vous.' },
-      { icon: '🌍', title: 'Virements internationaux', desc: 'Reversement en FCFA, EUR ou USD selon votre préférence. Justificatifs de virement fournis.' },
-    ],
-    processTitle: 'Comment ça démarre',
+    heading: 'Notre procédure de prise en charge d\'un bien en gestion immobilière',
+    intro: 'Points clés de différenciation MENADEL Résidence : Approche haut de gamme et standardisée • Optimisation de la rentabilité du propriétaire • Gestion clé en main (de A à Z) • Transparence financière et reporting régulier conformément à la loi en vigueur.',
     steps: [
-      { n: '1', t: 'Prise de contact', d: 'Nous échangeons sur votre bien, la situation locative actuelle et vos attentes.' },
-      { n: '2', t: 'Mandat de gestion', d: 'Signature d\'un contrat de mandat clair précisant honoraires, missions et délais.' },
-      { n: '3', t: 'État des lieux', d: 'Visite et état des lieux photographié du bien. Résiliation du précédent gestionnaire si nécessaire.' },
-      { n: '4', t: 'Premier versement', d: 'Dès le premier loyer encaissé, vous recevez votre reversement accompagné du rapport.' },
+      {
+        n: '1',
+        title: 'Prise de contact et qualification du besoin',
+        items: [
+          'Réception de la demande du propriétaire (physique ou morale)',
+          'Recueil des informations clés : type de bien, localisation, objectif (location courte/longue durée/mixte), niveau de standing',
+          'Planification d\'un rendez-vous pour visite',
+        ],
+      },
+      {
+        n: '2',
+        title: 'Visite technique et évaluation du bien',
+        items: [
+          'Inspection complète : état général, structure, équipements, finitions',
+          'Conformité aux standards de MENADEL Résidence',
+          'Prise de photos et collecte de documents (titre foncier, plans, etc.)',
+          'Identification des travaux éventuels (mise à niveau, ameublement, sécurité)',
+        ],
+      },
+      {
+        n: '3',
+        title: 'Étude de rentabilité et proposition commerciale',
+        items: [
+          'Analyse du marché local (comparables, zone, standing)',
+          'Détermination du positionnement tarifaire',
+          'Simulation de revenus (occupation estimée, rendement)',
+          'Présentation au propriétaire : stratégie d\'exploitation, modèle de gestion (commission ou loyer garanti), conditions contractuelles',
+        ],
+      },
+      {
+        n: '4',
+        title: 'Validation et signature du mandat de gestion',
+        items: [
+          'Signature du contrat de gestion immobilière : durée du mandat, obligations des parties, modalités financières',
+          'Constitution du dossier administratif : pièces d\'identité, documents de propriété, coordonnées bancaires',
+        ],
+      },
+      {
+        n: '5',
+        title: 'Mise à niveau et préparation du bien',
+        items: [
+          'Réalisation des travaux si nécessaire : rénovation, décoration, ameublement et équipements',
+          'Installation des standards MENADEL : linge, kits d\'accueil, connexion internet, TV, sécurité',
+          'Mise en conformité opérationnelle',
+        ],
+      },
+      {
+        n: '6',
+        title: 'Création du produit commercial',
+        items: [
+          'Shooting photo professionnel',
+          'Rédaction des descriptifs marketing',
+          'Intégration sur les canaux de diffusion : plateformes digitales, réseau clients MENADEL',
+          'Définition des procédures d\'accueil client',
+        ],
+      },
+      {
+        n: '7',
+        title: 'Mise en exploitation',
+        items: [
+          'Lancement de la commercialisation',
+          'Gestion des réservations',
+          'Accueil et check-in des clients',
+          'Suivi de la satisfaction client',
+        ],
+      },
+      {
+        n: '8',
+        title: 'Gestion opérationnelle continue',
+        items: [
+          'Entretien et maintenance du bien',
+          'Gestion du personnel (ménage, sécurité)',
+          'Gestion des incidents et réclamations',
+          'Optimisation du taux d\'occupation',
+        ],
+      },
+      {
+        n: '9',
+        title: 'Suivi financier et reporting',
+        items: [
+          'Encaissement des loyers / recettes',
+          'Paiement des charges (si mandaté)',
+          'Reversement au propriétaire',
+          'Transmission de rapports périodiques : revenus, taux d\'occupation, état du bien',
+        ],
+      },
+      {
+        n: '10',
+        title: 'Évaluation et amélioration continue',
+        items: [
+          'Analyse des performances',
+          'Ajustement des tarifs et stratégies',
+          'Recommandations d\'investissement (amélioration du bien)',
+          'Renouvellement ou révision du mandat',
+        ],
+      },
     ],
     appsEyebrow: 'Outils numériques exclusifs',
     appsHeading: 'Deux apps mobiles incluses dans votre mandat',
@@ -80,22 +163,105 @@ const CONTENT = {
       description: 'Delegate management of your Burkina Faso property to Menadel Residence. Tenant search, rent collection, monthly reporting, international transfers.',
     },
     eyebrow: 'Service',
-    heading: 'Property management',
-    intro: 'Your property in Burkina Faso generates income while you live abroad. Menadel Residence handles everything on the ground — you receive your rent every month without lifting a finger.',
-    services: [
-      { icon: '🔍', title: 'Tenant search', desc: 'Rigorous selection, solvency check, photographic condition report on move-in.' },
-      { icon: '💰', title: 'Collection & disbursement', desc: 'Rent collected and transferred to your account (BF or international) before the 10th of each month.' },
-      { icon: '🔧', title: 'Routine maintenance', desc: 'Minor repairs and regular upkeep handled by our vetted contractors, with receipts provided.' },
-      { icon: '📊', title: 'Monthly reporting', desc: 'Detailed monthly report: rent received, works done, property condition, photos on request.' },
-      { icon: '📄', title: 'Administrative management', desc: 'Lease renewals, condition reports, terminations — all paperwork handled for you.' },
-      { icon: '🌍', title: 'International transfers', desc: 'Disbursement in FCFA, EUR or USD per your preference. Transfer receipts provided.' },
-    ],
-    processTitle: 'How to get started',
+    heading: 'Our property management onboarding procedure',
+    intro: 'MENADEL Residence key differentiators: Premium and standardized approach • Owner profitability optimization • Turnkey management (A to Z) • Financial transparency and regular reporting in compliance with applicable laws.',
     steps: [
-      { n: '1', t: 'Initial contact', d: 'We discuss your property, current rental situation and your expectations.' },
-      { n: '2', t: 'Management mandate', d: 'Signing of a clear management contract specifying fees, scope and timelines.' },
-      { n: '3', t: 'Condition report', d: 'Property visit and photographic condition report. Previous manager handover if needed.' },
-      { n: '4', t: 'First payment', d: 'As soon as the first rent is collected, you receive your disbursement with the report.' },
+      {
+        n: '1',
+        title: 'Initial contact and needs assessment',
+        items: [
+          'Receiving the owner\'s request (individual or company)',
+          'Gathering key information: property type, location, objective (short/long term/mixed rental), standing level',
+          'Scheduling a visit appointment',
+        ],
+      },
+      {
+        n: '2',
+        title: 'Technical visit and property evaluation',
+        items: [
+          'Complete inspection: general condition, structure, equipment, finishes',
+          'Compliance with MENADEL Residence standards',
+          'Photo documentation and document collection (land title, plans, etc.)',
+          'Identification of potential work (upgrades, furnishing, security)',
+        ],
+      },
+      {
+        n: '3',
+        title: 'Profitability study and commercial proposal',
+        items: [
+          'Local market analysis (comparables, area, standing)',
+          'Pricing positioning',
+          'Revenue simulation (estimated occupancy, yield)',
+          'Presentation to owner: operating strategy, management model (commission or guaranteed rent), contractual terms',
+        ],
+      },
+      {
+        n: '4',
+        title: 'Validation and management mandate signing',
+        items: [
+          'Signing of property management contract: mandate duration, party obligations, financial terms',
+          'Administrative file compilation: ID documents, property documents, bank details',
+        ],
+      },
+      {
+        n: '5',
+        title: 'Property upgrade and preparation',
+        items: [
+          'Carrying out work if needed: renovation, decoration, furnishing and equipment',
+          'Installing MENADEL standards: linens, welcome kits, internet, TV, security',
+          'Operational compliance',
+        ],
+      },
+      {
+        n: '6',
+        title: 'Commercial product creation',
+        items: [
+          'Professional photo shoot',
+          'Marketing description writing',
+          'Integration on distribution channels: digital platforms, MENADEL client network',
+          'Client welcome procedures definition',
+        ],
+      },
+      {
+        n: '7',
+        title: 'Launch of operations',
+        items: [
+          'Marketing launch',
+          'Reservation management',
+          'Client welcome and check-in',
+          'Client satisfaction monitoring',
+        ],
+      },
+      {
+        n: '8',
+        title: 'Ongoing operational management',
+        items: [
+          'Property maintenance and upkeep',
+          'Staff management (cleaning, security)',
+          'Incident and complaint handling',
+          'Occupancy rate optimization',
+        ],
+      },
+      {
+        n: '9',
+        title: 'Financial monitoring and reporting',
+        items: [
+          'Rent/revenue collection',
+          'Charges payment (if mandated)',
+          'Owner disbursement',
+          'Periodic report transmission: revenues, occupancy rate, property condition',
+        ],
+      },
+      {
+        n: '10',
+        title: 'Evaluation and continuous improvement',
+        items: [
+          'Performance analysis',
+          'Pricing and strategy adjustments',
+          'Investment recommendations (property improvement)',
+          'Mandate renewal or revision',
+        ],
+      },
     ],
     appsEyebrow: 'Exclusive digital tools',
     appsHeading: 'Two mobile apps included with your mandate',
@@ -239,40 +405,57 @@ export default async function GestionLocativePage({
 
   return (
     <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="max-w-3xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-gold)] mb-3">
-          {c.eyebrow}
-        </p>
-        <h1 className="font-serif text-4xl sm:text-5xl font-semibold text-white leading-tight mb-4">
-          {c.heading}
-        </h1>
-        <p className="text-[var(--color-white-muted)] text-lg leading-relaxed mb-12 max-w-prose">
-          {c.intro}
-        </p>
-
-        {/* Services grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-14">
-          {c.services.map((s) => (
-            <div key={s.title} className="p-5 rounded-xl bg-[var(--color-anthracite-soft)] border border-white/10">
-              <div className="text-2xl mb-2">{s.icon}</div>
-              <h2 className="font-semibold text-white mb-1">{s.title}</h2>
-              <p className="text-sm text-[var(--color-white-muted)] leading-relaxed">{s.desc}</p>
+      {/* Main Layout: Form Left, Content Right */}
+      <div className="grid grid-cols-1 lg:grid-cols-[480px_1fr] gap-12 lg:gap-20">
+        {/* LEFT COLUMN: Form */}
+        <div className="order-2 lg:order-1">
+          <div className="sticky top-8">
+            <div className="p-6 rounded-xl bg-[var(--color-anthracite-soft)] border border-white/10">
+              <h2 className="font-serif text-2xl font-semibold text-white mb-2">
+                {c.formTitle}
+              </h2>
+              <p className="text-sm text-[var(--color-white-muted)] mb-6">
+                {c.formSubtitle}
+              </p>
+              <PropertyManagementForm source="gestion-locative" />
             </div>
-          ))}
+          </div>
         </div>
 
-        {/* Process */}
-        <div className="mb-14">
-          <h2 className="font-serif text-2xl font-semibold text-white mb-6">{c.processTitle}</h2>
+        {/* RIGHT COLUMN: Content */}
+        <div className="order-1 lg:order-2">
+          {/* Header */}
+          <div className="mb-12">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-gold)] mb-3">
+              {c.eyebrow}
+            </p>
+            <h1 className="font-serif text-4xl sm:text-5xl font-semibold text-white leading-tight mb-4">
+              {c.heading}
+            </h1>
+            <p className="text-[var(--color-white-muted)] text-lg leading-relaxed max-w-2xl">
+              {c.intro}
+            </p>
+          </div>
+
+          {/* 10 étapes du parcours propriétaire */}
           <div className="space-y-4">
             {c.steps.map((step) => (
-              <div key={step.n} className="flex gap-4">
-                <div className="w-7 h-7 rounded-full border border-[var(--color-gold)]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-xs text-[var(--color-gold)] font-semibold">{step.n}</span>
-                </div>
-                <div>
-                  <p className="font-semibold text-white text-sm">{step.t}</p>
-                  <p className="text-sm text-[var(--color-white-muted)]">{step.d}</p>
+              <div key={step.n} className="p-5 rounded-xl bg-[var(--color-anthracite-soft)] border border-white/10">
+                <div className="flex items-start gap-4">
+                  <div className="w-9 h-9 rounded-full bg-[var(--color-gold)]/10 border border-[var(--color-gold)]/30 flex items-center justify-center flex-shrink-0">
+                    <span className="text-sm text-[var(--color-gold)] font-bold">{step.n}</span>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-white mb-2">{step.title}</h3>
+                    <ul className="space-y-1">
+                      {step.items.map((item, idx) => (
+                        <li key={idx} className="text-sm text-[var(--color-white-muted)] leading-relaxed flex gap-2">
+                          <span className="text-[var(--color-gold)] flex-shrink-0">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             ))}
@@ -281,7 +464,7 @@ export default async function GestionLocativePage({
       </div>
 
       {/* ── Apps mobiles — section pleine largeur ── */}
-      <div className="rounded-2xl border border-[var(--color-gold)]/15 bg-gradient-to-br from-[var(--color-anthracite-soft)] to-[var(--color-anthracite)] px-4 sm:px-10 py-8 sm:py-12 mb-14">
+      <div className="rounded-2xl border border-[var(--color-gold)]/15 bg-gradient-to-br from-[var(--color-anthracite-soft)] to-[var(--color-anthracite)] px-4 sm:px-10 py-8 sm:py-12">
         {/* Section header */}
         <div className="max-w-2xl mb-10">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-gold)] mb-3">
@@ -383,19 +566,6 @@ export default async function GestionLocativePage({
             </div>
           </div>
 
-        </div>
-      </div>
-
-      {/* Contact form */}
-      <div className="max-w-3xl">
-        <div className="p-6 rounded-xl bg-[var(--color-anthracite-soft)] border border-white/10">
-          <h2 className="font-serif text-2xl font-semibold text-white mb-2">
-            {c.formTitle}
-          </h2>
-          <p className="text-sm text-[var(--color-white-muted)] mb-6">
-            {c.formSubtitle}
-          </p>
-          <ContactFormInline source="gestion-locative" />
         </div>
       </div>
     </div>
